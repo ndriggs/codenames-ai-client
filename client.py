@@ -5,7 +5,7 @@ import requests
 import socketio
 from socketio.exceptions import TimeoutError
 
-from agents.word2vec import W2VAssoc, W2VSpymaster
+from agents.gpt_agent import MySpymaster, MyAssoc
 from base.constants import Team
 
 # Game Constants
@@ -77,7 +77,7 @@ def play_game(sio: socketio.SimpleClient, code: str, team: str, ai) -> None:
 # ** Instantiate your AI here! ********
 def getAI():
     """Entry point for the game engine to get an AI agent."""
-    return W2VSpymaster(W2VAssoc())
+    return MySpymaster(MyAssoc())
 
 
 def main():
